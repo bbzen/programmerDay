@@ -8,13 +8,12 @@ public class Main {
         while (true) {
             System.out.println("Введите год:");
             int year = scanner.nextInt();
-
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
             if (isLeapYear(year)) {
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-                System.out.println(dtf.format(LocalDate.of(year, 9, 13)));
-
+                System.out.println(dtf.format(LocalDate.of(year, 9, 12)));
                 // здесь нужно вывести результат
             } else if (year == 0) break;
+            else System.out.println(dtf.format(LocalDate.of(year, 9, 13)));
         }
     }
 
